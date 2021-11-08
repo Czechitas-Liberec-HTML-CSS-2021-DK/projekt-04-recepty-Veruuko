@@ -1,7 +1,12 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
-
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
 
 /* -------------------------------------------------- */
 
@@ -17,23 +22,144 @@ středně široké obrazovky:
 }
 */
 
-
 body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .paticka {
-    text-align: center;
-    font-size: 14px;
-    color: silver;
+  text-align: center;
+  font-size: 14px;
+  color: silver;
 }
 
 .paticka a {
-    color: silver;
+  color: silver;
 }
-
 
 /* ------------------------------- */
 /* ----- DOLE BUDE TVOJE CSS ----- */
 /* ------------------------------- */
+h2 {
+  font-family: Raleway;
+  font-weight: 800;
+  color: white;
+  align-self: flex-end;
+  width: 100%;
+  margin: 0;
+  order: 3;
+}
+
+p {
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: white;
+  margin: 0;
+}
+
+.recepty {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: auto;
+  max-width: 1600px;
+}
+
+.recept {
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.recept img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.ctverice,
+.dvojice {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.velky {
+  min-height: 200px;
+}
+
+.velky h2 {
+  font-size: 1.75rem;
+}
+
+.maly {
+  min-height: 90px;
+}
+
+.maly h2 {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 480px) {
+  .ctverice {
+    flex-direction: row;
+  }
+
+  .dvojice {
+    width: 50%;
+  }
+
+  .recept {
+    padding: 1.25rem;
+  }
+
+  .velky {
+    min-height: 250px;
+  }
+
+  .velky h2 {
+    font-size: 2rem;
+  }
+
+  .maly {
+    min-height: 150px;
+  }
+
+  .maly h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .recepty {
+    flex-direction: row;
+  }
+
+  .ctverice {
+    flex: 2 0 66%;
+  }
+
+  .velky {
+    flex: 1 0 33%;
+    min-height: 400px;
+  }
+
+  .velky h2 {
+    font-size: 3rem;
+  }
+
+  .maly {
+    min-height: 200px;
+  }
+
+  .maly h2 {
+    font-size: 1.75rem;
+  }
+}
